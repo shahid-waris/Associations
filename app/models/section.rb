@@ -1,4 +1,4 @@
 class Section < ApplicationRecord
   belongs_to :document
-  has_many :documents
+  has_many :pharagraphs
 end
