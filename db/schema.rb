@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_065933) do
+ActiveRecord::Schema.define(version: 2021_02_21_075859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,14 @@ ActiveRecord::Schema.define(version: 2021_02_21_065933) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "employeees", force: :cascade do |t|
+    t.string "name"
+    t.bigint "manager_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["manager_id"], name: "index_employeees_on_manager_id"
   end
 
   create_table "employees", force: :cascade do |t|
@@ -161,6 +169,7 @@ ActiveRecord::Schema.define(version: 2021_02_21_065933) do
   add_foreign_key "appointments", "physicians"
   add_foreign_key "bank_accounts", "users"
   add_foreign_key "books", "authors"
+  add_foreign_key "employeees", "employees", column: "manager_id"
   add_foreign_key "pharagraphs", "sections"
   add_foreign_key "sections", "documents"
 end
