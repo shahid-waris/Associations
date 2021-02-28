@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'picture', to: 'picture#new'
   get 'user', to: 'user#new'
   devise_for :views
   devise_for :users
