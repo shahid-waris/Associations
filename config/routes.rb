@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'user/new'
-  get 'users/new'
+  get 'user', to: 'user#new'
   devise_for :views
   devise_for :users
   root to: 'home#index'
