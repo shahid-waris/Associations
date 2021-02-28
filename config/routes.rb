@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'user/new'
   get 'users/new'
   devise_for :views
   devise_for :users
