@@ -4,14 +4,18 @@
     <title>Associations</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+  <body class="mt-16" style="background:grey">
+    <%= render 'shared/navbar' %>
+    <div style="background:white; margin-left: 130px; margin-right: 130px;padding:8px; margin-top:100px">
+      <p><%= notice %></p>
+      <p><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>
